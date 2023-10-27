@@ -18,7 +18,7 @@ npm create vite@lastest
 ```
 Type: y which is <b> agree to install </b>
 ```bash
-  Ok to proceed? (y) y
+  Ok to proceed? (y)   y
 ```
 Then, specify your own project name. 
 ```bash
