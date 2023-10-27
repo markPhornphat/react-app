@@ -1,8 +1,8 @@
-import Message from './Message'; // . mean Current folder 
+import ListGroup from "./component/ListGroup"; // . mean Current folder 
 
 function App()
 {
-  return <div><Message></Message></div>;
+  return <div><ListGroup /></div>;
 }
 
 export default App;
