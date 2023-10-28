@@ -1,7 +1,13 @@
 import { MouseEvent, useState } from "react"; //useState ==> To tell the react that this variable is change over time
 
-function ListGroup() {
-  let items = ["New York", "Thailand", "Tokyo", "London", "Paris"];
+interface Props {
+  items: string[];
+  heading: string;
+  onSelectItem: (item: string) => void; //Send the function in and return void
+}
+
+function ListGroup({ items, heading, onSelectItem }: Props) {
+  //React application => "PascalCasing"
   // items.map(item => <li> {item} </li> ) สั่งให้ item แต่ละไอ item เปลี่ยนเป็น format <li> {element in array} </li>
   //                      Note! React ต้องการให้เรา keep track list each item --> ใส่ key เข้าไป ในแต่ละ element (line: 14)
   const message = items.length === 0 ? <p>No item found!</p> : null;
@@ -28,7 +34,7 @@ function ListGroup() {
   //ถ้าจะใส่ <h1></h1> --> ต้องใส่ <div> หรือ ( <fragment> or <> </> ) ครอบลงไปด้วย
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {items.length === 0 ? <p>No item found!</p> : null}
       <ul className="list-group">
         {items.map((item, index) => (
@@ -41,6 +47,7 @@ function ListGroup() {
             key={item}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}
