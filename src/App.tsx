@@ -1,5 +1,7 @@
 import Alert from "./component/Alert";
 import ListGroup from "./component/ListGroup"; // . mean Current folder
+import Button from "./component/Button";
+import { useState } from "react";
 
 // <ListGroup /> is the same as <ListGroup></ListGroup>
 function App() {
@@ -8,9 +10,16 @@ function App() {
   function handleSelectItem(item: string) {
     console.log(item);
   }
+
+  const [alertVisible, setAlertVisibility] = useState(false);
   return (
     <div>
-      <Alert>Hello World!</Alert>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibility(false)}> Alert!!! </Alert>
+      )}
+      <Button color="primary" onClick={() => setAlertVisibility(true)}>
+        My Button
+      </Button>
     </div>
   );
 }
