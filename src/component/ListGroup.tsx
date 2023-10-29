@@ -1,6 +1,7 @@
 import { MouseEvent, useState } from "react"; //useState ==> To tell the react that this variable is change over time
 
 interface Props {
+  //To change the list dynamically
   items: string[];
   heading: string;
   onSelectItem: (item: string) => void; //Send the function in and return void

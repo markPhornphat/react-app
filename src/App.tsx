@@ -1,3 +1,4 @@
+import Alert from "./component/Alert";
 import ListGroup from "./component/ListGroup"; // . mean Current folder
 
 // <ListGroup /> is the same as <ListGroup></ListGroup>
