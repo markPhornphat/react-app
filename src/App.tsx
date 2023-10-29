@@ -10,11 +10,7 @@ function App() {
   }
   return (
     <div>
-      <ListGroup
-        items={items}
-        heading="Cities"
-        onSelectItem={handleSelectItem}
-      />
+      <Alert>Hello World!</Alert>
     </div>
   );
 }
